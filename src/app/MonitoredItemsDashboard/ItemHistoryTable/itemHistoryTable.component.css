@@ -1,0 +1,12 @@
+table {
+    width: 100%;
+  }
+  .error{
+    background: #FF9AA2; /* green */
+    }
+  .warning{
+    background: #FFDAC1; /* green */
+      }
+  .ok{
+    background: #B5EAD7; /* green */
+    }

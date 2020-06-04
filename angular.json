@@ -63,11 +63,13 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "WCDApp:build"
+            "browserTarget": "WCDApp:build",
+            "proxyConfig": "src/proxy.conf.json"
           },
           "configurations": {
             "production": {
-              "browserTarget": "WCDApp:build:production"
+              "browserTarget": "WCDApp:build:production",
+              "proxyConfig": "src/proxy.conf.json"
             }
           }
         },

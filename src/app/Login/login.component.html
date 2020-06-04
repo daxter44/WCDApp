@@ -1,0 +1,69 @@
+  
+<mat-dialog-content class="dialog-content"  dynamicHeight >
+    <mat-tab-group class="mat-tab-conent" dynamicHeight >
+        <mat-tab label="Sign in">
+            <div class="invitation" >
+                <p class="mat-small">We're glad to see you again. Please sign-in</p>
+              </div>
+            <form [formGroup]="form" fxLayout="column" fxLayoutAlign="space-around stretch" fxLayoutGap="10px" (ngSubmit)="SignIn()" >
+                <!-- EMAIL -->
+                <mat-form-field appearance="legacy" >
+                    <mat-label>e-mail</mat-label>
+                    <input matInput formControlName="email">
+                    <mat-error *ngIf="form.controls.email.errors?.required">
+                    Please specify your email here
+                    </mat-error>
+                </mat-form-field>
+                <br/>
+                <mat-form-field appearance="legacy" >
+                    <mat-label>password</mat-label>
+                    <input matInput type="password" formControlName="password">
+                    <mat-error *ngIf="form.controls.password.errors?.required">
+                    Please specify your password here
+                    </mat-error>
+                </mat-form-field>
+                <br/>
+                <button mat-stroked-button color="primary" type="submit" [disabled]="!form.valid" class="btn">
+                Zaloguj
+              </button>
+            </form>
+        </mat-tab>
+        <mat-tab label="Register" >
+            <div class="invitation" >
+                <h1 class="mat-title">Welcome to WCD.</h1>
+                <p class="mat-small"> As a registered users you'll get unrestricted access to all the features</p>
+              </div>
+              <form [formGroup]="registerForm"  (ngSubmit)="register()" >
+                <!-- EMAIL -->
+                <mat-form-field appearance="legacy" >
+                    <mat-label>E-mail</mat-label>
+                    <input matInput formControlName="newEmail">
+                    <mat-error *ngIf="registerForm.controls.newEmail.errors?.required">
+                    Please specify your email here
+                    </mat-error>
+                </mat-form-field>
+                <br/>
+                <mat-form-field appearance="legacy" >
+                    <mat-label>Password</mat-label>
+                    <input type="password"  matInput type="newPassword" formControlName="newPassword">
+                    <mat-error *ngIf="registerForm.controls.newPassword.errors?.required">
+                    Please specify your password here
+                    </mat-error>
+                </mat-form-field>
+                <br/>
+                <mat-form-field appearance="legacy" >
+                    <mat-label>Re-enter password</mat-label>
+                    <input type="password"  matInput type="rePassword" formControlName="rePassword">
+                    <mat-error *ngIf="registerForm.controls.rePassword.errors?.required">
+                    Please specify your password here
+                    </mat-error>
+                </mat-form-field>
+                <br/>
+                <button mat-stroked-button color="primary" type="submit" [disabled]="!registerForm.valid" class="btn">
+                Sign-in
+              </button>
+            </form>
+        </mat-tab>
+      </mat-tab-group>
+      
+</mat-dialog-content>

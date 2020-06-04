@@ -1,0 +1,17 @@
+
+.mat-typography {
+    height: 100%;
+    align-content: center;
+    background-color: chocolate;
+  }
+  .jumbotron{
+      background:transparent;
+  }
+  .workField {
+/* 
+    background-image: url("../assets/images/background.png"); */
+    
+  }
+  .right-side-button{
+    float:right;
+  }

@@ -1,0 +1,24 @@
+
+:host {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: stretch;
+    max-height: 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .invitation{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .close-button{
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .mat-tab-conent{
+    height: 100%
+  }

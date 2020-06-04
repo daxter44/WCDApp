@@ -1,0 +1,57 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+	<!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+	<!-- Position Column -->
+	<ng-container matColumnDef="position">
+		<th mat-header-cell *matHeaderCellDef> No. </th>
+		<td mat-cell *matCellDef="let element; let i = index;"> {{i+1}} </td>
+	</ng-container>
+
+	<!-- url Column -->
+	<ng-container matColumnDef="url">
+		<th mat-header-cell *matHeaderCellDef> URL </th>
+		<td mat-cell *matCellDef="let element"> {{element.url}} </td>
+	</ng-container>
+
+	<!-- frequency Column -->
+	<ng-container matColumnDef="frequency">
+		<th mat-header-cell *matHeaderCellDef> Frequency</th>
+		<td mat-cell *matCellDef="let element"> {{element.frequency}} </td>
+	</ng-container>
+
+	<!-- elementname Column -->
+	<ng-container matColumnDef="elementName">
+		<th mat-header-cell *matHeaderCellDef> Element name </th>
+		<td mat-cell *matCellDef="let element"> {{element.elementName}} </td>
+	</ng-container>
+
+	<!-- isactive olumn -->
+	<ng-container matColumnDef="isActive">
+		<th mat-header-cell *matHeaderCellDef> Active </th>
+		<td mat-cell *matCellDef="let element" >
+			<mat-slide-toggle (change)="changeToggle(element)" [checked]="element.isActive"></mat-slide-toggle>
+		</td>
+	</ng-container>
+	<ng-container matColumnDef="actions">
+        <th mat-header-cell  *matHeaderCellDef > Actions  </th>
+        <td mat-cell *matCellDef="let element" >
+			<button matTooltip="Show history" (click)="showHistory(element.monitItemId)" class="btn btn-outline-primary btn-sm">
+				Show history
+			 </button>
+			 <button matTooltip="Delete" (click)="delete(element.monitItemId)" class="btn btn-outline-danger btn-sm margin-left">
+				Delete
+			 </button>
+            </td>
+    </ng-container>
+	<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+	<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+
+
+<!-- Copyright 2019 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
+
